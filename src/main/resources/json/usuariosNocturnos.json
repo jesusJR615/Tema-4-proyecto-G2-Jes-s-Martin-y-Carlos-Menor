@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "nombre": "Arturo",
+    "login": "arturo",
+    "password": "art1+",
+    "nivel": 2,
+    "turno": "nocturno",
+    "plusProductividad": 4.5
+  }
+]

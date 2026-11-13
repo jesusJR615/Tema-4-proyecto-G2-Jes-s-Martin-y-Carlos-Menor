@@ -1,0 +1,11 @@
+[
+  {
+    "id": 2,
+    "nombre": "Manuel",
+    "login": "manuel",
+    "password": "man2-",
+    "nivel": 1,
+    "turno": "diurno",
+    "retencion": 2.0
+  }
+]
