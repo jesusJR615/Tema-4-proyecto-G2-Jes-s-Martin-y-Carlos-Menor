@@ -1,0 +1,18 @@
+/* Estilos comunes: Thymeleaf (MVC) y HTML + fetch (REST). */
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; font-family: Arial, sans-serif; background: #f0f2f5; color: #333; }
+h1 { text-align: center; margin: 0 0 30px; font-size: 34px; }
+.page { padding: 45px 20px; }
+.card { background: #fff; max-width: 625px; margin: 0 auto; padding: 35px 32px; border-radius: 11px; box-shadow: 0 2px 14px rgba(0,0,0,.10); }
+.login-card { max-width: 450px; }
+label { display: block; font-weight: bold; margin: 0 0 7px; }
+input { display:block; width:100%; padding:11px; margin:0 0 17px; border:1px solid #ccc; border-radius:5px; font:inherit; }
+button { background:#4caf50; border:0; border-radius:5px; color:white; font:inherit; padding:12px 22px; cursor:pointer; }
+.login-card button { width:100%; }
+button:hover { background:#449d48; }
+.datos p { margin:0 0 18px; font-size:16px; color:#555; }
+.logout { display:inline-block; margin-top:20px; padding:12px 22px; border-radius:5px; background:#f44336; color:white; text-decoration:none; }
+.logout:hover { background:#d32f2f; }
+.error-message { color:#b71c1c; text-align:center; margin:15px 0 0; }
+.error-message:empty { display:none; }
+[hidden] { display:none !important; }

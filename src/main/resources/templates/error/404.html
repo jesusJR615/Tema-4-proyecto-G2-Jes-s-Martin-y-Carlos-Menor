@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Error 404 - Recurso no encontrado</title>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            text-align: center;
+        }
+        .error-container {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 30px;
+            display: inline-block;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #e74c3c;
+        }
+        p {
+            margin: 10px 0;
+        }
+        .timestamp {
+            color: #888;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+    <div class="nav-wrapper">
+
+        <div class="nav-logo">Gestión Escolar</div>
+
+        <input type="checkbox" id="nav-toggle">
+        <label for="nav-toggle" class="hamburger">☰</label>
+
+        <ul class="nav-menu">
+            <li><a th:href="@{/alumnos}">Alumnos</a></li>
+            <li><a th:href="@{/cursos}">Cursos</a></li>
+            <li><a th:href="@{/profesores}">Profesores</a></li>
+            <li><a th:href="@{/logout}">Salir</a></li>
+        </ul>
+    </div>
+</nav>
+    <div class="error-container">
+        <h1 th:text="${error.status}">404</h1>
+        <h2 th:text="${error.message}">Mensaje de error</h2>
+        <p th:text="${error.error}">Detalles del error</p>
+        <p th:text="${#dates.format(error.date, 'dd/MM/yyyy HH:mm:ss')}">Fecha y hora</p>
+        <a th:href="@{/alumnos}">Volver al inicio</a>
+    </div>
+</body>
+</html>

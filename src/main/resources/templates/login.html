@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Acceso MVC - Empleados</title>
+    <!-- Misma hoja CSS que la interfaz REST. -->
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<main class="page">
+    <h1>Iniciar sesión - MVC</h1>
+    <form class="card login-card" th:action="@{/login}" method="post">
+        <!-- Este formulario utiliza el Controller tradicional, SIN fetch. -->
+        <label for="login">Usuario:</label>
+        <input id="login" name="login" type="text" autocomplete="username" required>
+        <label for="password">Contraseña:</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required>
+        <button type="submit">Entrar</button>
+        <p class="error-message" th:if="${errorMsg}" th:text="|${errorMsg} (Código: ${errorCode})|"></p>
+    </form>
+</main>
+</body>
+</html>

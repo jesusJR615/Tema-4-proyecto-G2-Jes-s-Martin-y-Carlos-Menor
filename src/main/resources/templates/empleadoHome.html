@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inicio MVC - Empleados</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<main class="page">
+    <!-- Thymeleaf recibe el empleado del Controller, no utiliza JavaScript. -->
+    <section class="card">
+        <h1>Bienvenido, <span th:text="${empleado.nombre}">Empleado</span></h1>
+        <div class="datos">
+            <p>ID: <span th:text="${empleado.id}"></span></p>
+            <p>Login: <span th:text="${empleado.login}"></span></p>
+            <p>Turno: <span th:text="${empleado.turno}"></span></p>
+            <p>Nivel: <span th:text="${empleado.nivel}"></span></p>
+            <!-- Campo propio de cada subtipo; se calcula en el Controller. -->
+            <p th:if="${datoExtra != null}"><span th:text="${etiquetaExtra}"></span>: <span th:text="${datoExtra}"></span></p>
+        </div>
+        <a class="logout" th:href="@{/empleado/logout}">Cerrar sesión</a>
+    </section>
+</main>
+</body>
+</html>

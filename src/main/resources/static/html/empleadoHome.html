@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inicio REST - Empleados</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/empleadoHome.js" defer></script>
+</head>
+<body>
+<main class="page">
+    <!-- La API REST rellena los datos; nunca incluimos la contraseña. -->
+    <section class="card" id="home-container" hidden>
+        <h1>Bienvenido, <span id="nombre"></span></h1>
+        <div class="datos">
+            <p>ID: <span id="id"></span></p>
+            <p>Login: <span id="login"></span></p>
+            <p>Turno: <span id="turno"></span></p>
+            <p>Nivel: <span id="nivel"></span></p>
+            <p id="datoExtra" hidden></p>
+        </div>
+        <a href="#" class="logout" id="cerrarSesion">Cerrar sesión</a>
+    </section>
+    <p id="mensajeError" class="error-message" role="alert" aria-live="polite"></p>
+</main>
+</body>
+</html>
