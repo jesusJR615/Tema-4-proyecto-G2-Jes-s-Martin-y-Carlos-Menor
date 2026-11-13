@@ -6,14 +6,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import practicag2.jessusycarlos.models.Usuarios;
 
 
 
-
+@Repository 
 public abstract class UsuariosRepository implements IUsuariosRepository{
     //Creo la lista de usuario
     private List<Usuarios> usuarios = new ArrayList<>();
@@ -31,13 +30,17 @@ public abstract class UsuariosRepository implements IUsuariosRepository{
     }
 
     //Creo el método public List<Usuarios> findAll();
+    @Override 
     public List<Usuarios> findAll(){
         return usuarios;
     }
 
     //Creo el método int save (Usuarios usuarios)
+    @Override 
     public int save (Usuarios usuario){
-        usuario.
+        usuario.setId(idGenerador.incrementAndGet());
+        usuarios.add(usuario);
+        return usuarios.size();
     }
     
 }
