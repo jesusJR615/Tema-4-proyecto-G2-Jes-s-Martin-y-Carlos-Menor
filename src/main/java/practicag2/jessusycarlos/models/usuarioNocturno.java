@@ -2,7 +2,7 @@ package practicag2.jessusycarlos.models;
 
 public class usuarioNocturno extends Usuarios {
     // Atributos del json
-    private int plusProductividad;
+    private double plusProductividad;
 
     // Constructor vacio
     public usuarioNocturno() {
@@ -11,17 +11,17 @@ public class usuarioNocturno extends Usuarios {
 
     // constructor con los atributos
     public usuarioNocturno(int id, String nombre, String login, String password, int nivel, String turno,
-            int plusProductividad) {
+            double plusProductividad) {
                 super(id, nombre, login, password, nivel, turno);
         this.plusProductividad = plusProductividad;
     }
 
     // Setter y Getter
-    public int getplusProductividad() {
+    public double gePlusProductividad() {
         return plusProductividad;
     }
 
-    public void setplusProductividad(int plusProductividad) {
+    public void setPlusProductividad(double plusProductividad) {
         this.plusProductividad = plusProductividad;
     }
 
