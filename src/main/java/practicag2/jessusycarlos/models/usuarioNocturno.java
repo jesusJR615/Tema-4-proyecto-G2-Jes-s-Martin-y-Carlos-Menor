@@ -1,8 +1,8 @@
 package practicag2.jessusycarlos.models;
 
 public class usuarioNocturno {
-    //Atributos del json
-private int id;
+    // Atributos del json
+    private int id;
     private String nombre;
     private String login;
     private String password;
@@ -10,13 +10,14 @@ private int id;
     private String turno;
     private int plusProductividad;
 
-    //Constructor vacio
-    public usuarioNocturno(){
+    // Constructor vacio
+    public usuarioNocturno() {
 
     }
 
-    //constructor con los atributos
-    public usuarioNocturno(int id, String nombre, String login, String password, int nivel, String turno, int plusProductividad){
+    // constructor con los atributos
+    public usuarioNocturno(int id, String nombre, String login, String password, int nivel, String turno,
+            int plusProductividad) {
         this.id = id;
         this.nombre = nombre;
         this.login = login;
@@ -26,8 +27,8 @@ private int id;
         this.plusProductividad = plusProductividad;
     }
 
-    //Setter y Getter
-     public int getId() {
+    // Setter y Getter
+    public int getId() {
         return id;
     }
 
@@ -81,5 +82,18 @@ private int id;
 
     public void setplusProductividad(int plusProductividad) {
         this.plusProductividad = plusProductividad;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario-Diurno{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", login=" + login + '\'' +
+                ", password=" + password + '\'' +
+                ", nivel=" + nivel + '\'' +
+                ", turno=" + turno + '\'' +
+                ", plusProductividad=" + plusProductividad +
+                '}';
     }
 }
