@@ -10,7 +10,7 @@ public class UsuariosNocturnosService extends UsuariosService{
     private  IUsuariosRepository usuariosRepository;
     //Creo el constructor
     public UsuariosNocturnosService(@Qualifier("usuariosNocturnos")IUsuariosRepository usuariosRepository){
-        this.usuariosRepository = usuariosRepository;
+        super(usuariosRepository);
     }
     
 }

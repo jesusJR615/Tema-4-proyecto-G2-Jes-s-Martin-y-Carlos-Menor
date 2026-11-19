@@ -6,7 +6,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import practicag2.jessusycarlos.interceptors.SessionInterceptor;
 
-@Configuration 
+@Configuration
 public class MvcConfig implements WebMvcConfigurer {
     private final SessionInterceptor sessionInterceptor;
 
@@ -14,15 +14,20 @@ public class MvcConfig implements WebMvcConfigurer {
         this.sessionInterceptor = sessionInterceptor;
     }
 
-    @Override 
-    public void addInterceptors(InterceptorRegistry registry){
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        // Se protegen y se excluyen las rutas, tanto para REST como para MVC
+        registry.addInterceptor(new SessionInterceptor())
+                .addPathPatterns("/empleado/**", "/api/**")
+                .excludePathPatterns(
+                        "/login",
+                        "/api/login",
+                        "/css/**",
+                        "/js/**",
+                        "/html/**",
+                        "/error",
+                        "/favicon.ico");
 
-        //REST -> Aquí van las rutas json
-        registry.addInterceptor(new SessionInterceptor()).addPathPatterns("/api/**", "/empleado/**");
-
-        //MVC -> Aquí van las rutas web
-        registry.addInterceptor(new SessionInterceptor()).addPathPatterns("/**");
-        registry.addInterceptor(new SessionInterceptor()).excludePathPatterns("/login", "/api/login");
     }
-    
+
 }

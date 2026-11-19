@@ -9,8 +9,7 @@ import tools.jackson.databind.ObjectMapper;
 
 import org.springframework.core.io.Resource;
 
-@Component
-@Repository
+
 public class UsuarioNocturnoRepositoryJson extends UsuariosRepository {
 
     // Creo el contructor para leer el json
