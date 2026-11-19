@@ -1,8 +1,6 @@
 package practicag2.jessusycarlos.repository;
 
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 
 import practicag2.jessusycarlos.models.usuarioDiurno;
 import tools.jackson.databind.ObjectMapper;

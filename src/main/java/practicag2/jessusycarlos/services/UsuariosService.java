@@ -2,7 +2,6 @@ package practicag2.jessusycarlos.services;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 
 
 import practicag2.jessusycarlos.models.Usuarios;
