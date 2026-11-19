@@ -16,8 +16,22 @@ public class SessionInterceptor implements HandlerInterceptor {
 
         //Compruebo si existe la sesión
         if(session == null || session.getAttribute("usuario") == null){
-            System.out.println("[preHandle] Acceso denegado: No se ha podido iniciar la sesións");
+            System.out.println("[preHandle] Acceso denegado: No se ha podido iniciar la sesión");
+
+            // Comprubebo la direccion url
+            if (request.getRequestURI().startsWith("/api")) {
+                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                response.setContentType("application/json;charset=UTF-8");
+                response.getWriter().write("{\"codigo\":401,\"mensaje\":\"Usuario no autenticado\"}");
+                return false;
+            }
+
+            // Le envío a la vista login
+            response.sendRedirect("/login");
+            return false;
         }
-        return  true;
+
+        // le permito el acceso
+        return true;
     }
 }

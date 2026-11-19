@@ -15,8 +15,7 @@ import practicag2.jessusycarlos.exceptiones.LoginIncorrectoException;
 import practicag2.jessusycarlos.exceptiones.SessionNoIniciadaException;
 import practicag2.jessusycarlos.exceptiones.UsuarioNotFoundException;
 
-@RestControllerAdvice(assignableTypes = EmpleadoController.class) // Contiene las exceptiones 'LoginIncorrecto y
-                                                                  // contraseñaIncorrecta'
+@RestControllerAdvice(assignableTypes = { EmpleadoController.class, EmpleadoRestControlller.class})
 public class HandlerExceptionController {
 
     // CredencialesInvalidasException (401)

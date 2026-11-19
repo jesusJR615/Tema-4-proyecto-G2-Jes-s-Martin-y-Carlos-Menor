@@ -17,7 +17,7 @@ public class usuarioNocturno extends Usuarios {
     }
 
     // Setter y Getter
-    public double gePlusProductividad() {
+    public double getPlusProductividad() {
         return plusProductividad;
     }
 
